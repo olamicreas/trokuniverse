@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0c6de0, #151515);
+            transition: background 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-arrow:hover {
+            color: #0c6de0;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            animation: fadeInDown 1.5s ease-in-out;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0c6de0;
+            animation: fadeInDown 1.5s ease-in-out;
+            font-weight: bold;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease-in-out;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #cccccc;
+        }
+
+        .notify-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #0c6de0;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(12, 109, 224, 0.3);
+        }
+
+        .notify-btn:hover {
+            background-color: #025add;
+            transform: translateY(-3px);
+        }
+
+        .animation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        .circle:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .circle:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content h2 {
+                font-size: 20px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .notify-btn {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 22px;
+            }
+
+            .content h2 {
+                font-size: 18px;
+            }
+
+            .content p {
+                font-size: 12px;
+            }
+
+            .back-arrow {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-arrow">&#8592; Back</a>
+    <div class="container">
+        
+        <div class="content">
+            <h1>GET TRAINING THE WAY YOU WANT IT, ONLINE, ONE ON ONE AND IN CLASS</h1>
+            <h2>WE'RE LAUNCHING CERTIFIED PROGRAMS VERY SOON</h2>
+            <p>This training is completely hands-on and designed in a way to help you become a certified practitioner through best practices. Our training will help you learn and master various aspects of software development, operations, continuous integration, continuous delivery, automated build, test, and deployment.</p>
+            <button class="notify-btn" onclick="notify();">Notify Me</button>
+        </div>
+        <br>
+        <br>
+        <div class="animation" style="display: none;" id="vis">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function notify() {
+            const ani = document.getElementById('vis');
+            ani.style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = 'contact.html';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
